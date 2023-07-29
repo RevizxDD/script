@@ -61,25 +61,25 @@ function Library:CreateWindow(title, color)
     core.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
     core.BorderColor3 = Color3.fromRGB(8, 8, 8)
     core.Position = UDim2.new(0.156000003, 0, 0.140000001, 0)
-    core.Size = UDim2.new(0, 400, 0, 430)
+    core.Size = UDim2.new(0, 540, 0, 531)
 
     outlinecore.Name = "outlinecore"
     outlinecore.Parent = core
     outlinecore.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
     outlinecore.BorderSizePixel = 0
     outlinecore.Position = UDim2.new(0, 1, 0, 1)
-    outlinecore.Size = UDim2.new(0, 428, 0, 429)
+    outlinecore.Size = UDim2.new(0, 538, 0, 529)
 
     title_18.Name = "title"
     title_18.Parent = outlinecore
     title_18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     title_18.BackgroundTransparency = 1.000
     title_18.Position = UDim2.new(0.0185185187, 0, 0.00188323914, 0)
-    title_18.Size = UDim2.new(0, 421, 0, 23)
+    title_18.Size = UDim2.new(0, 521, 0, 23)
     title_18.Font = Enum.Font.SourceSans
     title_18.Text = title
     title_18.TextColor3 = Color3.fromRGB(255, 255, 255)
-    title_18.TextSize = 15.000
+    title_18.TextSize = 18.000
     title_18.TextStrokeTransparency = 0.000
     title_18.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -88,27 +88,27 @@ function Library:CreateWindow(title, color)
     inline.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
     inline.BorderSizePixel = 0
     inline.Position = UDim2.new(0, 7, 0, 23)
-    inline.Size = UDim2.new(0, 415, 0, 400)
+    inline.Size = UDim2.new(0, 525, 0, 500)
 
     inlineoutline.Name = "inlineoutline"
     inlineoutline.Parent = inline
     inlineoutline.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
     inlineoutline.BorderSizePixel = 0
     inlineoutline.Position = UDim2.new(0, 1, 0, 1)
-    inlineoutline.Size = UDim2.new(0, 423, 0, 398)
+    inlineoutline.Size = UDim2.new(0, 523, 0, 498)
 
     inlinecore.Name = "inlinecore"
     inlinecore.Parent = inlineoutline
     inlinecore.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
     inlinecore.BorderSizePixel = 0
     inlinecore.Position = UDim2.new(0, 1, 0, 1)
-    inlinecore.Size = UDim2.new(0, 421, 0, 396)
+    inlinecore.Size = UDim2.new(0, 521, 0, 496)
 
     tabbar.Name = "tabbar"
     tabbar.Parent = inlinecore
     tabbar.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
     tabbar.BorderColor3 = Color3.fromRGB(8, 8, 8)
-    tabbar.Size = UDim2.new(0, 410, 0, 25)
+    tabbar.Size = UDim2.new(0, 521, 0, 25)
 
     UIListLayout.Parent = tabbar
     UIListLayout.FillDirection = Enum.FillDirection.Horizontal
@@ -268,7 +268,7 @@ function Library:CreateWindow(title, color)
             Right.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             Right.BackgroundTransparency = 1.000
             Right.Position = UDim2.new(0.499040306, 0, 0, 0)
-            Right.Size = UDim2.new(0, 160, 0, 351)
+            Right.Size = UDim2.new(0, 260, 0, 471)
             Right.BottomImage = ""
             Right.CanvasSize = UDim2.new(0, 0, 0, 0)
             Right.ScrollBarThickness = 0
