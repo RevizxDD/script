@@ -1,1 +1,1 @@
--- waiting for update
+print("waiting for update")
