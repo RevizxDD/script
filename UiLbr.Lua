@@ -35,7 +35,7 @@ local Library = {}
          ImageLabel_1.Parent = MainHolder_1 
          ImageLabel_1.BackgroundColor3 = Color3.fromRGB(0,0,0) 
          ImageLabel_1.BorderColor3 = Color3.fromRGB(27,42,53) 
-         ImageLabel_1.Size = UDim2.new(0, 310,0, 538) 
+         ImageLabel_1.Size = UDim2.new(0, 431,0, 410) 
          ImageLabel_1.Image = "rbxassetid://13659368848" 
          ImageLabel_1.ImageTransparency = 0.5600000023841858 
   
