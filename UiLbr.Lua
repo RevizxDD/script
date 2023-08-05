@@ -35,7 +35,7 @@ local Library = {}
          ImageLabel_1.Parent = MainHolder_1 
          ImageLabel_1.BackgroundColor3 = Color3.fromRGB(0,0,0) 
          ImageLabel_1.BorderColor3 = Color3.fromRGB(27,42,53) 
-         ImageLabel_1.Size = UDim2.new(0, 431,0, 410) 
+         ImageLabel_1.Size = UDim2.new(0, 431,0, 409) 
          ImageLabel_1.Image = "rbxassetid://13659368848" 
          ImageLabel_1.ImageTransparency = 0.5600000023841858 
   
@@ -232,6 +232,184 @@ local Library = {}
                          UIListLayout_2.Parent = Items_2 
                          UIListLayout_2.Padding = UDim.new(0,8) 
                          UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder 
+                   
+                         function GroupTypes:CreateDropdown(name, options, callback)
+                name = name or "Dropdown"
+                options = options or {}
+                callback = callback or function(o) print(o) end
+
+                -- Dropdown Main
+                local DropTypes = {}
+                local Selected = ""
+
+                -- Dropdown Instances
+                local title_15 = Instance.new("TextLabel")
+                local combobox = Instance.new("Frame")
+                local main_2 = Instance.new("TextButton")
+                local UIGradient_3 = Instance.new("UIGradient")
+                local title_4 = Instance.new("TextLabel")
+                local list = Instance.new("Frame")
+                local UIGradient_4 = Instance.new("UIGradient")
+                local UIListLayout_4 = Instance.new("UIListLayout")
+
+                -- Dropdown Properties
+                title_15.Name = "title"
+                title_15.Parent = container_2
+                title_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                title_15.BackgroundTransparency = 1.000
+                title_15.Position = UDim2.new(0, 10, 0, 51)
+                title_15.Size = UDim2.new(0, 234, 0, 42)
+                title_15.ZIndex = 0
+                title_15.Font = Enum.Font.SourceSans
+                title_15.Text = name
+                title_15.TextColor3 = Color3.fromRGB(255, 255, 255)
+                title_15.TextSize = 15.000
+                title_15.TextStrokeTransparency = 0.000
+                title_15.TextXAlignment = Enum.TextXAlignment.Left
+                title_15.TextYAlignment = Enum.TextYAlignment.Top
+
+                combobox.Name = "combobox"
+                combobox.Parent = title_15
+                combobox.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+                combobox.BorderColor3 = Color3.fromRGB(8, 8, 8)
+                combobox.Position = UDim2.new(0, 0, 0, 22)
+                combobox.Size = UDim2.new(0, 234, 0, 20)
+
+                main_2.Name = "main"
+                main_2.Parent = combobox
+                main_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                main_2.BackgroundTransparency = 1.000
+                main_2.Size = UDim2.new(1, 0, 1, 0)
+                main_2.Font = Enum.Font.SourceSans
+                main_2.Text = ""
+                main_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+                main_2.TextSize = 14.000
+                
+                UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(167, 167, 167))}
+                UIGradient_3.Rotation = 90
+                UIGradient_3.Parent = combobox
+                
+                title_4.Name = "title"
+                title_4.Parent = combobox
+                title_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                title_4.BackgroundTransparency = 1.000
+                title_4.Position = UDim2.new(0, 11, 0, 0)
+                title_4.Size = UDim2.new(0, 223, 0, 20)
+                title_4.Font = Enum.Font.SourceSans
+                title_4.Text = "..."
+                title_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                title_4.TextSize = 15.000
+                title_4.TextStrokeTransparency = 0.000
+                title_4.TextXAlignment = Enum.TextXAlignment.Left
+                
+                list.Name = "list"
+                list.Parent = combobox
+                list.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+                list.BorderColor3 = Color3.fromRGB(8, 8, 8)
+                list.Position = UDim2.new(0, 0, 1, 0)
+                list.Size = UDim2.new(0, 234, 0, 5)
+                list.Visible = false
+                
+                UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(167, 167, 167))}
+                UIGradient_4.Rotation = 90
+                UIGradient_4.Parent = list
+                
+                UIListLayout_4.Parent = list
+                UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+
+                UIListLayout_4:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+                    list.Size = UDim2.new(0, 234, 0, UIListLayout_4.AbsoluteContentSize.Y)
+                end)
+
+                -- Dropdown Code
+                main_2.MouseButton1Click:Connect(function()
+                    title_15.ZIndex = 9
+                    list.Visible = not list.Visible
+
+                    for i,v in pairs(container_2:GetChildren()) do
+                        if (v ~= title_15 and not v.Name:find("UI")) then
+                            v.ZIndex = 0
+                        end
+                    end
+                end)
+
+                if (#options > 0) then
+                    for i,v in pairs(options) do
+                        local item = Instance.new("TextButton")
+                        local UIGradient_5 = Instance.new("UIGradient")
+                        local title_5 = Instance.new("TextLabel")
+                        
+                        item.Name = "item"
+                        item.Parent = list
+                        item.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+                        item.BorderSizePixel = 0
+                        item.Size = UDim2.new(1, 0, 0, 19)
+                        item.Font = Enum.Font.SourceSans
+                        item.Text = ""
+                        item.TextColor3 = Color3.fromRGB(0, 0, 0)
+                        item.TextSize = 14.000
+                        
+                        UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(167, 167, 167))}
+                        UIGradient_5.Rotation = 90
+                        UIGradient_5.Parent = item
+                        UIGradient_5.Enabled = false
+
+                        title_5.Name = "title"
+                        title_5.Parent = item
+                        title_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        title_5.BackgroundTransparency = 1.000
+                        title_5.Size = UDim2.new(1, 0, 1, 0)
+                        title_5.Font = Enum.Font.SourceSans
+                        title_5.Text = v
+                        title_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        title_5.TextSize = 14.000
+                        title_5.TextStrokeTransparency = 0.000
+
+                        item.MouseButton1Click:Connect(function()
+                            UIGradient_5.Enabled = true
+                            item.BackgroundColor3 = color
+
+                            for i,v in pairs(list:GetChildren()) do
+                                if (v.Name:find("item") and v ~= item) then
+                                    v.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+                                    v.UIGradient.Enabled = false
+                                end
+                            end
+
+                            Selected = v
+                            title_4.Text = Selected
+                            callback(Selected)
+                        end)
+                    end
+                end
+
+                -- Dropdown Types
+                function DropTypes:SetOption(option)
+                    option = option or options[1]
+                    Selected = tostring(option)
+                    
+                    for i,v in pairs(list:GetChildren()) do
+                        if (v.Name:find("item")) then
+                            if (v.Text == Selected) then
+                                v.BackgroundColor3 = color
+                                v.UIGradient.Enabled = true
+                            else
+                                v.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+                                v.UIGradient.Enabled = false
+                            end
+                        end
+                    end
+
+                    title_4.Text = Selected
+                    callback(Selected)
+                end
+
+                function DropTypes:GetOption()
+                    return Selected
+                end
+
+                return DropTypes
+            end
                           
                          local Elements = {} 
                          function Elements:CreateButton(ButName,Callback) 
