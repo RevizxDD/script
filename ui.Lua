@@ -154,7 +154,7 @@ local ui =  game:GetService("CoreGui"):FindFirstChild("redui") if ui then ui:Des
 		local NameReal = Instance.new("TextLabel")
 
 		NameReal.Parent = MainSceen
-		NameReal.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		NameReal.BackgroundColor3 = Color3.fromRGB(36, 38, 36)
 		NameReal.BackgroundTransparency = 1
 		NameReal.BorderSizePixel = 0
 		NameReal.Position = UDim2.new(0.5, 0, 0.05, 0)
@@ -170,7 +170,7 @@ local ui =  game:GetService("CoreGui"):FindFirstChild("redui") if ui then ui:Des
 		MainSceen2.Name = "MainSceen2"
 		MainSceen2.Parent = MainSceen
 		MainSceen2.AnchorPoint = Vector2.new(0.5, 0.5)
-		MainSceen2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		MainSceen2.BackgroundColor3 = Color3.fromRGB(36, 38, 36)
 		MainSceen2.BorderSizePixel = 0
 		MainSceen2.Position = UDim2.new(0.5, 0, 0.5, 0)
 		MainSceen2.Size = UDim2.new(0, 0, 0, 0)
@@ -205,7 +205,7 @@ local ui =  game:GetService("CoreGui"):FindFirstChild("redui") if ui then ui:Des
 		ScrollingFrame_Menubar.BorderSizePixel = 0
 		ScrollingFrame_Menubar.Size = UDim2.new(0, 500, 0, 35)
 		ScrollingFrame_Menubar.CanvasSize = UDim2.new(2, 0, 0, 0)
-		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromRGB(240, 255, 255)
+		ScrollingFrame_Menubar.ScrollBarImageColor3 = Color3.fromRGB(36, 38, 36)
 		ScrollingFrame_Menubar.ScrollBarThickness = 3
 
 
